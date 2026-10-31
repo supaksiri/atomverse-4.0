@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {CASES,QUESTIONS,markAnswer,type Question} from './learning';
-import {loadProgress,saveProgress,type Progress} from './Progress';
+import {type Progress} from './Progress';
 export const ELEMENTS=[{z:1,s:'H',n:'ไฮโดรเจน',mass:1.008,group:1},{z:2,s:'He',n:'ฮีเลียม',mass:4.003,group:18},{z:3,s:'Li',n:'ลิเทียม',mass:6.94,group:1},{z:4,s:'Be',n:'เบริลเลียม',mass:9.0122,group:2},{z:5,s:'B',n:'โบรอน',mass:10.81,group:13},{z:6,s:'C',n:'คาร์บอน',mass:12.011,group:14},{z:7,s:'N',n:'ไนโตรเจน',mass:14.007,group:15},{z:8,s:'O',n:'ออกซิเจน',mass:15.999,group:16},{z:9,s:'F',n:'ฟลูออรีน',mass:18.998,group:17},{z:10,s:'Ne',n:'นีออน',mass:20.180,group:18},{z:11,s:'Na',n:'โซเดียม',mass:22.990,group:1},{z:12,s:'Mg',n:'แมกนีเซียม',mass:24.305,group:2},{z:13,s:'Al',n:'อะลูมิเนียม',mass:26.982,group:13},{z:14,s:'Si',n:'ซิลิคอน',mass:28.085,group:14},{z:15,s:'P',n:'ฟอสฟอรัส',mass:30.974,group:15},{z:16,s:'S',n:'กำมะถัน',mass:32.06,group:16},{z:17,s:'Cl',n:'คลอรีน',mass:35.45,group:17},{z:18,s:'Ar',n:'อาร์กอน',mass:39.95,group:18},{z:19,s:'K',n:'โพแทสเซียม',mass:39.098,group:1},{z:20,s:'Ca',n:'แคลเซียม',mass:40.078,group:2}];
 export function QuizCenter({goLab,onFinish}:{goLab:(lab:1|2|3|4)=>void;onFinish:(score:number,total:number,scope:string)=>void}){
  const [scope,setScope]=useState(0),[index,setIndex]=useState(0),[choices,setChoices]=useState<Record<string,number>>({}),[submitted,setSubmitted]=useState(false),[practice,setPractice]=useState(false);
